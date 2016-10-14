@@ -1,1 +1,81 @@
+@import 'variables';
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+$faded-white: rgba(255,255,255, .5);
+
+body {
+  background-color: white;
+  text-align: center;
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../../dist/resources/pink-flower.jpg');
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+p {
+  font-size: $font-size-base;
+  margin: 2 * $font-size-lg;
+  font-weight: lighter;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: $font-size-base;
+}
+
+.body-container {
+  padding: 1em;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.logo-image {
+  width: 300px;
+  max-width: 50%;
+  margin: auto;
+  display: block;
+  padding-top: 50px;
+}
+
+.prices-box {
+  position: relative;
+  background-color: $faded-white;
+  padding: 1em;
+  clear: both;
+
+  $border-gap: 5px;
+  &:before {
+    position: absolute;
+    top: - $border-gap;
+    left: - $border-gap;
+    content: " ";
+    width: calc(100% + (2 * #{$border-gap}));
+    height: calc(100% + (2 * #{$border-gap}));
+    border: 2px solid $faded-white;
+  }
+
+  // Clearfix
+  &:after {
+     content: " "; /* Older browser do not support empty content */
+     visibility: hidden;
+     display: block;
+     height: 0;
+     clear: both;
+  }
+}
+
+.prices-box-title {
+  padding: 1em 0;
+}
+
+.prices-box-price {
+  padding: 1.5em 0;
+  max-width: 300px;
+  margin: auto;
+}
